@@ -26,3 +26,6 @@ config.json
 *log.json
 .coverage
 .coveralls.yml
+_build
+_static
+_templates
