@@ -8,19 +8,17 @@ stages:
     continueOnError: false
 
     steps:
-    - task: AzurePowerShell@4
+    - task: AzurePowerShell@1
       inputs:
-        azureSubscription: 'Pay-As-You-Go(9638d9af-c663-4e5a-9336-d41b9bafab83)'
+        ConnectedServiceNameSelector: 'ConnectedServiceNameARM'
+        ConnectedServiceNameARM: 'Pay-As-You-Go(9638d9af-c663-4e5a-9336-d41b9bafab83)'
         ScriptType: 'InlineScript'
-        Inline: 'New-AzureRmResourceGroup -Name RG09 -Location "South Central US"'
-        azurePowerShellVersion: 'LatestVersion'
+        Inline: 'New-AzureRmResourceGroup -Name RG11 -Location "South Central US"'
 
 
 
-    - task: AzurePowerShell@4
+    - task: AzurePowerShell@1
       inputs:
-        azureSubscription: 'Pay-As-You-Go(9638d9af-c663-4e5a-9336-d41b9bafab83)'
         ScriptType: 'InlineScript'
-        Inline: 'New-AzWebApp -RG09 Default-Web-WestUS -Name "ContosoSite" -Location "West US" -AppServicePlan "ContosoServicePlan"'
-        azurePowerShellVersion: 'LatestVersion'
+        Inline: 'New-AzWebApp -RG11 Default-Web-WestUS -Name "ContosoSite" -Location "West US" -AppServicePlan "ContosoServicePlan"'
         
