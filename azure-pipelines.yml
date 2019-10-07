@@ -20,4 +20,7 @@ stages:
         script: 'Install-Module -Name Az -AllowClobber -Scope AllUsers -Force'
         pwsh: true
         
-    - script: Connect-AzAccount
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: 'Connect-AzAccount'
