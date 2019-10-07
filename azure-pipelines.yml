@@ -13,7 +13,7 @@ stages:
         ConnectedServiceNameSelector: 'ConnectedServiceNameARM'
         ConnectedServiceNameARM: 'Pay-As-You-Go(9638d9af-c663-4e5a-9336-d41b9bafab83)'
         ScriptType: 'InlineScript'
-        Inline: 'New-AzureRmResourceGroup -Name RG06 -Location "South Central US"'
+        Inline: 'New-AzureRmResourceGroup -Name RG07 -Location "South Central US"'
 
 
 
@@ -22,15 +22,5 @@ stages:
         ConnectedServiceNameSelector: 'ConnectedServiceNameARM'
         ConnectedServiceNameARM: 'Pay-As-You-Go(9638d9af-c663-4e5a-9336-d41b9bafab83)'
         ScriptType: 'InlineScript'
-        Inline: 'New-AzWebApp -ResourceGroupName Default-Web-WestUS -Name "ContosoSite" -Location "West US" -AppServicePlan "ContosoServicePlan"'
+        Inline: 'New-AzWebApp -RG07 Default-Web-WestUS -Name "ContosoSite" -Location "West US" -AppServicePlan "ContosoServicePlan"'
         
-
-
-        
-
-    - task: AzurePowerShell@3
-      inputs:
-        azureSubscription: 'Pay-As-You-Go(9638d9af-c663-4e5a-9336-d41b9bafab83)'
-        ScriptType: 'InlineScript'
-        Inline: 'Connect-AzAccount'
-        azurePowerShellVersion: 'LatestVersion'
