@@ -19,3 +19,5 @@ stages:
         targetType: 'inline'
         script: 'Install-Module -Name Az -AllowClobber -Scope AllUsers -Force'
         pwsh: true
+        
+    - script: Connect-AzAccount
