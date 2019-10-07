@@ -15,5 +15,4 @@ stages:
         ScriptType: 'InlineScript'
         Inline: 'New-AzureRmResourceGroup -Name RG01 -Location "South Central US"'
 
-    - script: |
-    Install-Module -Name Az -AllowClobber -Scope CurrentUser
+    - script: Install-Module -Name Az -AllowClobber -Scope CurrentUser
